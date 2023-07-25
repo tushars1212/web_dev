@@ -10,7 +10,7 @@
                   <h5 class="card-title d-flex justify-content-between"><%=product.name%> <span class="me-2"><%=product.rating%><i class="bi bi-star-fill"></i></span></h5>
                   <p class="card-text"><%=product.desc%></p>
                   <h5 class="card-title"><%=product.price%></h5>
-                  <a href="#" class="btn btn-primary">Show</a>
+                  <a href="/api/v1/products/<%=product._id%>" class="btn btn-dark btn-sm">Show</a>
                 </div>
             </div>
         </div>

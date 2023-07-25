@@ -6,8 +6,14 @@ const productSchema = new mongoose.Schema({
     desc: String,
     imageUrl: String,
     quantity: Number,
-    rating: Number
-},{versionKey: false, timestamps: true});
+    rating: Number,
+    reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review',
+        },
+    ],
+}, { versionKey: false, timestamps: true });
 
 const Product = mongoose.model('Product', productSchema);
 
