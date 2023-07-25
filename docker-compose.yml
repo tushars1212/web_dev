@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: ecommerce-app
     environment:
-      - DB_URL="mongodb://mongodb:${PORT}/${DB_NAME}"
+      - DB_URL=mongodb://mongodb:${MONGO_PORT}/${DB_NAME}
     env_file:
       - .env
     ports:
@@ -22,9 +22,6 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME="${ROOT_USERNAME}"
-      - MONGO_INITDB_ROOT_PASSWORD="${ROOT_PASSWORD}"
     networks:
       - my_network
 
