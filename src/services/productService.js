@@ -1,14 +1,13 @@
 const productRepo = require('../repositories/productRepo');
 
-const getAllProducts = async() => {
-    return await productRepo.getAllProducts()
-}
+const getAllProducts = async () => productRepo.getAllProducts();
 
-const create = async(product) => {
-    return await productRepo.save(product);
-}
+const create = async (product) => productRepo.save(product);
+
+const findById = async (id) => productRepo.findByIdWithReviews(id);
 
 module.exports = {
     create,
-    getAllProducts
-}
+    getAllProducts,
+    findById,
+};
